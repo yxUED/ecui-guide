@@ -179,7 +179,7 @@ ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecom
 
   <!--target:homepage -->
   <div class="index-container">
-      <div class="index-text">欢迎使用ECUI</div>
+      <div class="index-text">主页</div>
   </div>
 ```
 代码中的module-link是ECUI的一个[组件]()，index.css的内容直接使用该项目下的index.css。在index.js中添加代码：
