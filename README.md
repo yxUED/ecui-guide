@@ -9,7 +9,7 @@
 只有组内人员才可以对文档进行修改，由已经在组内的人员邀请的方式加入。
 
 ## 常见问题
-### 访问页面空白
+开发或者使用ECUI框架过程中遇到的问题可以添加到[问题链接](doc/问题.md)所在页。
 
 ## 快速开始
 
@@ -238,9 +238,26 @@ ecui.esr.request('userInfo@GET base/user-info/${id}', function () {
 ```
 上面的代码中的匿名函数是请求成功后执行的函数。其中'userInfo@GET base/user-info/${id}'是一种语法，具体句法形式为：变量@方式 api路径?参数名=参数值，其中方式包括GET、POST、JOIN、FORM。
 ### 事件管理
-ECUI的事件
-## 文档
+ECUI的事件完全支持DOM事件，ECUI事件处理函数在函数addRoute中添加，事件处理函数放在onafterrender()函数中，一个按钮的点击事件的处理函数示例代码如下：   
+按钮
+```html
+<input ui="type:button;id:customerAddButton;" value="确认" type="button"/>
+```
+按钮点击处理：
+```js
+ecui.get('customerAddButton').onclick = function () {
+    // Do what you want to do.
+};
+```
+上面的按钮也是一个ECUI的控件，通过ecui.get()方法可以获得该控件的对象，在ECUI中事件处理函数命名都是'on+事件'的格式。
 
+## 文档
+[样式]()
+[表单]()
+[事件处理]()
+[路由]()
+[组件]()
+[框架原理]()
 ## 如何部署
 
 ### 打包代码
