@@ -1,0 +1,173 @@
+/*<script>window.onload=function(){var url=location.href,hash=document.getElementsByTagName('TEXTAREA')[0].value;url=decodeURIComponent(url.slice(url.lastIndexOf('=')+1));parent.location.href=url+'#'+encodeURIComponent(hash.slice(hash.indexOf('\n')+1).replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')||' ');}</script><textarea>*/
+
+@import (less) "common/css/UICONST.css";
+.contentWrapper {
+    position: relative;
+    height: 100%;
+    /*左侧导航*/
+    .left-content {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        height: 100%;
+        .logo {
+            margin-top: 15px;
+            margin-left: 12px;
+            height: 40px;
+            width: 157px;
+            font-size: 24px;
+            color: #fff;
+            img {
+                width: 100%;
+            }
+        }
+        .list-tree {
+            display: none;
+        }
+        .leftBar {
+            width: 200px;
+            background: #FFFFFF;
+            font-size: 16px;
+            display: block;
+            position: absolute;
+            overflow-y: auto;
+            top: 70px;
+            bottom: 0px;
+            left: 0;
+            z-index: 2;
+        }
+        .list-tree-children {
+            /* 一级节点 */
+            label,
+            li {
+                position: relative;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+                padding-left: 65px;
+                .icon {
+                    position: absolute;
+                    top: 8px;
+                    left: 35px;
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url('images/icon-group.png');
+                    background-repeat: no-repeat;
+                    background-position: 2px 2px;
+                }
+            }
+            label {
+                display: block;
+                cursor: pointer;
+                &.ui-treeview {
+                    color: #8492A6;
+                    padding-left: 65px;
+                }
+                &.list-tree-empty.ui-treeview {
+                    padding-left: 0px;
+                }
+                &.list-tree-empty.ui-treeview a {
+                    padding-left: 43px;
+                }
+                &.homepage {
+                    height: 45px;
+                    line-height: 45px;
+                    font-size: 18px;
+                    color: #fff;
+                }
+                &.homepage.ui-treeview-focus .icon,
+                &.homepage.ui-treeview-hover .icon {
+                    background-position: -28px 2px;
+                }
+                &.opportunity-manage .icon {
+                    background-position: -68px 2px;
+                }
+                &.opportunity-manage.ui-treeview-focus .icon,
+                &.opportunity-manage.ui-treeview-hover .icon {
+                    background-position: -98px 2px;
+                }
+
+                &.customer-manage .icon {
+                    background-position: -138px 2px;
+                }
+                &.customer-manage.ui-treeview-focus .icon,
+                &.customer-manage.ui-treeview-hover .icon {
+                    background-position: -168px 2px;
+                }
+
+                &.person-manage .icon {
+                    background-position: -208px 2px;
+                }
+                &.person-manage.ui-treeview-focus .icon,
+                &.person-manage.ui-treeview-hover .icon {
+                    background-position: -238px 2px;
+                }
+                &.homepage.ui-treeview-focus,
+                &.homepage.ui-treeview-hover,
+                &.opportunity-manage.ui-treeview-focus,
+                &.opportunity-manage.ui-treeview-hover,
+                &.customer-manage.ui-treeview-focus,
+                &.customer-manage.ui-treeview-hover,
+                &.person-manage.ui-treeview-focus,
+                &.person-manage.ui-treeview-hover {
+                    border-left: 4px solid #4E78DA;
+                    background-color: #F2F6FF;
+                    color: #3076FC;
+                    padding-left: 61px;
+                    .icon {
+                        left: 31px;
+                    }
+                    a {
+                        color: #3076FC;
+                    }
+                }
+            }
+            li .icon {
+                background-position: 24px 2px;
+            }
+            li.ui-treeview-selected,
+            li.ui-treeview-hover {
+                .icon {
+                    background-position: -266px 2px;
+                }
+                a {
+                    color: #3076FC;
+                }
+            }
+            .opportunity-list a:hover,
+            .opportunity-list-hover a,
+            .opportunity-list.ui-treeview-selected a {
+                background-position: 59px -625px;
+            }
+        }
+    }
+
+    .right-content {
+        position: relative;
+        height: 100%;
+        margin-left: 200px;
+        background-color: #F8F8F8;
+        .content-header {
+            position: relative;
+            height: 70px;
+            line-height: 70px;
+            width: 100%;
+            overflow-x: auto;
+            .location {
+                padding: 0px 20px;
+            }
+        }
+
+        /*主体内容区*/
+        .content-main {
+            position: absolute;
+            width: 100%;
+            top: 70px;
+            bottom: 0px;
+            left: 0px;
+            overflow-y: auto;
+        }
+    }
+}
