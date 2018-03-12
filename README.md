@@ -5,7 +5,7 @@
 > ECUI是我们易鑫集团新项目部的一个前端框架，目前主要用于公司的后台系统开发，但也在一定程度上支持H5开发；
 
 ## 如何贡献代码和更新文档
-文档内容放在了GitHub上：https://github.com/yxUED/ecui-guide
+文档内容放在了GitHub上：https://github.com/yxUED/ecui-guide  
 只有组内人员才可以对文档进行修改，由已经在组内的人员邀请的方式加入。
 
 ## 常见问题
@@ -14,7 +14,7 @@
 ## 快速开始
 
 ### 下载库
-从GitHub上下载（下载前确认Mac上安装了git客户端应用。）
+从GitHub上下载（下载前确认Mac上安装了git客户端应用。）  
 git clone https://github.com/allskystar/ECUI.git
 
 ### 创建项目
@@ -41,7 +41,7 @@ guide(项目目录)
                 |_ _ _ _  index.css
 
 ```
-项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。
+项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。  
 在项目中引用ECUI框架的方式采用在index.html文件中加入以下代码：
 ```html
 <link rel="stylesheet/less" type="text/css" href="ecui.css" />
@@ -54,8 +54,8 @@ guide(项目目录)
 ```
 上面的引入文件框架必须的是ecui.css、options.js、ecui.js，其他文件是为了该教材的示例的特定文件。
 ### 配置本地服务器
-教程提供通过Nginx和在页面上通过script标签引用需要的文件来实现ECUI框架的配置。
-1、安装Nginx服务器，Nginx官网没有提供Mac安装步骤，但是百度或google有很多的相关安装教程，这里不再赘述。
+教程提供通过Nginx和在页面上通过script标签引用需要的文件来实现ECUI框架的配置。  
+1、安装Nginx服务器，Nginx官网没有提供Mac安装步骤，但是百度或google有很多的相关安装教程，这里不再赘述。  
 2、配置Nginx配置文件。配置Nginx服务器,示例如下，根据实际环境（Mac brew安装默认路径:/usr/local/etc/nginx/nginx.conf）
 ```
 #控制工作进程数
@@ -150,7 +150,7 @@ http {
 Nginx启动在终端运行nginx命令，当修改配置文件后在终端运行命令nginx -s reload
 
 ### 模板引擎
-ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecomfe.github.io/etpl/
+ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecomfe.github.io/etpl/  
 详细了解ETPL模板引擎的开发文档请访问：https://github.com/ecomfe/etpl#documents
 
 ### 路由配置
@@ -194,7 +194,7 @@ ecui.esr.addRoute('index', {
     }
 });
 ```
-上面的代码为首页添加了路由。设置路由跳转的helloword的target。
+上面的代码为首页添加了路由。设置路由跳转的helloword的target。  
 在route.helloworld.demo.html中添加如下代码：
 ```html
 <!-- target:helloworldDemo -->
