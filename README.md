@@ -250,7 +250,7 @@ ecui.get('customerAddButton').onclick = function () {
     // Do what you want to do.
 };
 ```
-上面的按钮也是一个ECUI的控件，通过ecui.get()方法可以获得该控件的对象，在ECUI中事件处理函数命名都是'on+事件'的格式。
+上面的按钮也是一个ECUI的组件，通过ecui.get()方法可以获得该组件的对象，在ECUI中事件处理函数命名都是'on+事件'的格式。
 
 ## 文档
 [样式](doc/样式.md)   
