@@ -182,7 +182,7 @@ ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecom
       <div class="index-text">主页</div>
   </div>
 ```
-代码中的module-link是ECUI的一个[组件]()，index.css的内容直接使用该项目下的index.css。在index.js中添加代码：
+代码中的module-link是ECUI的一个[控件]()，index.css的内容直接使用该项目下的index.css。在index.js中添加代码：
 ```js
 ecui.esr.addRoute('index', {
     main: 'container',
@@ -250,14 +250,14 @@ ecui.get('customerAddButton').onclick = function () {
     // Do what you want to do.
 };
 ```
-上面的按钮也是一个ECUI的组件，通过ecui.get()方法可以获得该组件的对象，在ECUI中事件处理函数命名都是'on+事件'的格式。
+上面的按钮也是一个ECUI的控件，通过ecui.get()方法可以获得该控件的对象，在ECUI中事件处理函数命名都是'on+事件'的格式。
 
 ## 文档
 [样式](doc/样式.md)   
 [表单](doc/表单.md)   
 [事件处理](doc/事件处理.md)   
 [路由](doc/路由.md)   
-[组件](doc/组件.md)   
+[控件](doc/控件.md)   
 [框架原理](doc/框架原理.md)   
 
 ## 如何部署
