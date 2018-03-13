@@ -155,8 +155,9 @@ ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecom
 详细了解ETPL模板引擎的开发文档请访问：https://github.com/ecomfe/etpl#documents
 
 ### 路由配置
-教程中配置一个简单的路由，实现从index首页的target跳转到hellowworld，首先在index.html的body中添加如下代码：
+教程中配置一个简单的路由，实现从index首页的target跳转到hellowworld，首先在index.html的添加body如下代码：
 ```html
+<body data-ecui="load:esr" id="main">
 <!-- target:content -->
     <div class="contentWrapper">
       <div class="left-content">
@@ -181,6 +182,7 @@ ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecom
   <div class="index-container">
       <div class="index-text">主页</div>
   </div>
+<body>
 ```
 代码中的module-link是ECUI的一个[控件]()，index.css的内容直接使用该项目下的index.css。在index.js中添加代码：
 ```js
