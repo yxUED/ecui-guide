@@ -290,4 +290,28 @@ ecui.get('customerAddButton').onclick = function () {
 
 ## 如何部署
 ### 打包代码
+ECUI支持在开发完成好打包代码发布。首先进入到框架和项目目录的父目录，执行打包代码命令：   
+./lib-fe/build.sh 项目目录名称   
+打包时候需要安装lessc：  
+npm i -g less   
+安装Java，安装过程可百度或者google，资料很多。
+特殊情况下会遇到在开发环境没有问题，但是在发布的环境中有问题，在发布的环境中请求是异步的，对发布环境进行调试可以修改build.sh文件：   
+```js
+//less-plugin-clean-css没有安装或者安装有问题的话
+css_proc='lessc - --plugin=less-plugin-clean-css | python ${path}less-funcs.py "$2"'
+//去掉--plugin=less-plugin-clean-css
+css_proc='lessc - | python ${path}less-funcs.py "$2"'
+
+//不再压缩框架代码，把打包代码：
+compress_proc='java -jar ${path}webpacker.jar --mode 1 --charset utf-8'
+//去掉，换cat
+compress_proc='cat'
+//保留打包后的原目录，不进行压缩，去掉下面代码：  
+cd $output
+tar -zcvf "../$1.tar.gz" *
+cd ..
+
+rm -rf $output
+```
+打包之后，修改nginx服务器配置文件，使本地启动打包后的项目，然后可以按照正常方式对项目进行调试。
 ### 配置服务器
