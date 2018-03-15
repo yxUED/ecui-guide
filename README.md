@@ -158,34 +158,60 @@ ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecom
 教程中配置一个简单的路由，实现从index首页的target跳转到hellowworld，首先在index.html的添加body如下代码：
 ```html
 <body data-ecui="load:esr" id="main">
-<!-- target:content -->
-    <div class="contentWrapper">
-      <div class="left-content">
-          <div class="logo"><span>ECUI</span></div>
-          <div class="leftBar" id="leftBar">
-              <ul ui="type:module-link;id:list-tree">
-                  <label>根</label>
-                  <label class="homepage"><a href="#index">教程</a></label>
-                  <ul class="quick-start-manage">
-                      <label>helloworld</label>
-                      <li class="quick-start-check-btn"><a href="#helloworld.demo">Demo</a></li>
+  <!--
+  <<< target:content >>>
+        <div class="contentWrapper">
+          <div class="left-content">
+              <div class="logo"><span>ECUI</span></div>
+              <div class="leftBar" id="leftBar">
+                  <ul ui="type:module-link;id:list-tree">
+                      <label>根</label>
+                      <label class="homepage"><a href="#index">教程</a></label>
+                      <ul class="quick-start-manage">
+                          <label>helloworld</label>
+                          <li class="quick-start-check-btn"><a href="#helloworld.demo">Demo</a></li>
+                      </ul>
                   </ul>
-              </ul>
+              </div>
+          </div>
+          <div class="right-content">
+              <div class="content-main" id="container"></div>
           </div>
       </div>
-      <div class="right-content">
-          <div class="content-main" id="container"></div>
+      <<< target:homepage >>>
+      <div class="index-container">
+        <div class="index-text">欢迎使用ECUI</div>
       </div>
-  </div>
 
-  <!--target:homepage -->
-  <div class="index-container">
-      <div class="index-text">主页</div>
-  </div>
-<body>
+      -->
+</body>
 ```
 代码中的module-link是ECUI的一个[控件]()，index.css的内容直接使用该项目下的index.css。在index.js中添加代码：
 ```js
+ecui.esr.onready = function () {
+    etpl.config({
+        commandOpen: '<<<',
+        commandClose: '>>>'
+    });
+    for (var el = document.getElementById('main').firstChild; el; el = el.nextSibling) {
+        if (el.nodeType === 8) {
+            etpl.compile(el.textContent || el.nodeValue);
+        }
+    }
+    etpl.config({
+        commandOpen: '<!--',
+        commandClose: '-->'
+    });
+    return {
+        model: [''],
+        main: 'main',
+        view: 'content',
+        onbeforerender: function (context) {
+        },
+        onafterrender: function () {
+        }
+    };
+};
 ecui.esr.addRoute('index', {
     main: 'container',
     view: 'homepage',
@@ -207,17 +233,17 @@ ecui.esr.addRoute('index', {
 ```
 如果需要的话，在route.helloworld.demo.css中添加需要的样式代码，在route.helloworld.demo.js中添加如下代码：
 ```js
-ecui.esr.addRoute('helloword.demo', {
-  model: [''],
-  main: 'container',
-  view: 'helloworldDemo',
-  onbeforerequest: function () {
-  },
-  onbeforerender: function (context) {
-  },
-  onafterrender: function (context) {
-  }
-});
+ecui.esr.addRoute('helloworld.demo', {
+    model: [''],
+    main: 'container',
+    view: 'helloworldDemo',
+    onbeforerequest: function () {
+    },
+    onbeforerender: function (context) {
+    },
+    onafterrender: function (context) {
+    },
+  });
 ```
 index路由在首页运行时候已经添加，但是helloworld的路由所在的js文件还没有加载，所以在helloworld.js中添加如下代码：
 ```js
