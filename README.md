@@ -1,11 +1,11 @@
 # ECUI 教程及文档
 
 ## 前言
-    ECUI是我们易鑫集团一个总监10多年前在百度写的一个面向web开发的前端库，目前正在尝试支持 移动端开发;
-    项目的源码在[https://github.com/allskystar/ECUI](https://github.com/allskystar/ECUI);
+ECUI是我们易鑫集团一个总监10多年前在百度写的一个面向web开发的前端库，目前正在尝试支持 移动端开发;
+项目的源码在[https://github.com/allskystar/ECUI](https://github.com/allskystar/ECUI);
 
 ## 文档
-     初次尝试使用请先看后面的快速开始，深入了解请阅读如下链接：
+初次尝试使用请先看后面的快速开始，深入了解请阅读如下链接：
 [样式](doc/样式.md)   
 [表单](doc/表单.md)   
 [事件处理](doc/事件处理.md)   
@@ -14,7 +14,7 @@
 [框架原理](doc/框架原理.md)   
 
 ## 如何贡献代码和更新文档
-    希望经常使用的朋友们一起贡献代码和完善文档哈：
+希望经常使用的朋友们一起贡献代码和完善文档哈：
 文档内容放在了GitHub上：https://github.com/yxUED/ecui-guide，只有组内人员才可以对文档进行修改，由已经在组内的人员邀请的方式加入。  
 文档采用[MarkDown](http://www.markdown.cn/)编写，编写人员可以clone下文档项目进行编辑，或者直接通过GitHub中每个页面的编辑按钮对文档进行编辑，编辑完毕保存修改。
 
