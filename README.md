@@ -1,12 +1,11 @@
 # ECUI 教程及文档
 
 ## 前言
-ECUI是我们易鑫集团一个总监10多年前在百度写的一个面向web开发的前端库，目前正在尝试支持 移动端开发;
-项目的源码在[https://github.com/allskystar/ECUI](https://github.com/allskystar/ECUI);
+ECUI是我们易鑫集团一个总监10多年前在百度写的一个面向Web开发的前端库，目前正在尝试支持 移动端开发;   
+项目的源码地址:[https://github.com/allskystar/ECUI](https://github.com/allskystar/ECUI);
 
 ## 文档
-初次尝试使用请先看后面的快速开始，深入了解请阅读如下链接：
-<br/>
+初次尝试使用请先看后面的快速开始，深入了解请阅读如下链接：   
 [样式](doc/样式.md)   
 [表单](doc/表单.md)   
 [事件处理](doc/事件处理.md)   
@@ -27,10 +26,11 @@ ECUI是我们易鑫集团一个总监10多年前在百度写的一个面向web�
 
 ### 下载库
 从GitHub上下载（下载前确认Mac上安装了git客户端应用。）  
-git clone https://github.com/allskystar/ECUI.git
+>git clone https://github.com/allskystar/ECUI.git
 
 ### 创建项目
 按照下面示例的目录结构创建项目。
+
 ```
 ECUI 框架目录）
 guide(项目目录)
@@ -55,6 +55,7 @@ guide(项目目录)
 ```
 项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。     
 在项目中引用ECUI框架的方式采用在index.html文件中加入以下代码：
+
 ```html
 <link rel="stylesheet/less" type="text/css" href="ecui.css" />
 <link rel="stylesheet/less" type="text/css" href="common.css">
@@ -64,11 +65,13 @@ guide(项目目录)
 <script type="text/javascript" src="common.js"></script>
 <script type="text/javascript" src="index.js"></script>
 ```
-上面的引入文件框架必须的是ecui.css、options.js、ecui.js，其他文件是为了该教材的示例的特定文件。
+
+上面的引入文件框架必须的是 **ecui.css**、**options.js**、**ecui.js**，其他文件是为了该教材的示例的特定文件。
 ### 配置本地服务器
-教程提供通过Nginx和在页面上通过script标签引用需要的文件来实现ECUI框架的配置。     
-1、安装Nginx服务器，Nginx官网没有提供Mac安装步骤，但是百度或google有很多的相关安装教程，这里不再赘述。     
-2、配置Nginx配置文件。配置Nginx服务器,示例如下，根据实际环境（Mac brew安装默认路径:/usr/local/etc/nginx/nginx.conf）
+教程提供通过`Nginx`和在页面上通过`script`标签引用需要的文件来实现ECUI框架的配置。     
+1、安装`Nginx`服务器，`Nginx`官网没有提供Mac安装步骤，但是`百度`或`Google`有很多的相关安装教程，这里不再赘述。     
+2、配置`Nginx`配置文件。配置`Nginx`服务器,示例如下，根据实际环境（Mac brew安装默认路径:`/usr/local/etc/nginx/nginx.conf`）
+
 ```
 #控制工作进程数
 #该值应根据可用内核数，磁盘，网络子系统，服务器负载等更改为最佳值
@@ -159,14 +162,17 @@ http {
     }
 }
 ```
-Nginx启动在终端运行nginx命令，当修改配置文件后在终端运行命令nginx -s reload
+
+`Nginx`启动在终端运行命令，当修改配置文件后在终端运行命令
+>nginx -s reload
 
 ### 模板引擎
-ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecomfe.github.io/etpl/  
-详细了解ETPL模板引擎的开发文档请访问：https://github.com/ecomfe/etpl#documents
+ECUI采用了`ETPL`模板引擎，快速了解ETPL模板引擎访问：[http://ecomfe.github.io/etpl/](http://ecomfe.github.io/etpl/)  
+详细了解ETPL模板引擎的开发文档请访问：[https://github.com/ecomfe/etpl#documents](https://github.com/ecomfe/etpl#documents)
 
 ### 路由配置
-教程中配置一个简单的路由，实现从index首页的target跳转到hellowworld，首先在index.html的添加body如下代码：
+教程中配置一个简单的路由，实现从**index**首页的**target**跳转到**hellowworld**，首先在`index.html`的添加**body**如下代码：
+
 ```html
 <body data-ecui="load:esr" id="main">
   <!--
@@ -197,7 +203,8 @@ ECUI采用了ETPL模板引擎，快速了解ETPL模板引擎访问：http://ecom
       -->
 </body>
 ```
-代码中的module-link是ECUI的一个[控件]()，index.css的内容直接使用该项目下的index.css。在index.js中添加代码：
+代码中的**module-link**是ECUI的一个[控件]()，`index.css`的内容直接使用该项目下的`index.css`。在`index.js`中添加代码：
+
 ```js
 ecui.esr.onready = function () {
     etpl.config({
@@ -234,15 +241,18 @@ ecui.esr.addRoute('index', {
     }
 });
 ```
-上面的代码为首页添加了路由。设置路由跳转的helloword的target。  
-在route.helloworld.demo.html中添加如下代码：
+
+上面的代码为首页添加了路由。设置路由跳转的**helloword**的**target**。  
+在`route.helloworld.demo.html`中添加如下代码：
+
 ```html
 <!-- target:helloworldDemo -->
 <div>
   Hello world
 </div>
 ```
-如果需要的话，在route.helloworld.demo.css中添加需要的样式代码，在route.helloworld.demo.js中添加如下代码：
+如果需要的话，在`route.helloworld.demo.css`中添加需要的样式代码，在`route.helloworld.demo.js`中添加如下代码：
+
 ```js
 ecui.esr.addRoute('helloworld.demo', {
     model: [''],
@@ -256,19 +266,24 @@ ecui.esr.addRoute('helloworld.demo', {
     },
   });
 ```
-index路由在首页运行时候已经添加，但是helloworld的路由所在的js文件还没有加载，所以在helloworld.js中添加如下代码：
+
+index路由在首页运行时候已经添加，但是**helloworld**的路由所在的**js**文件还没有加载，所以在`helloworld.js`中添加如下代码：
+
 ```js
 ecui.esr.loadRoute('helloworld.demo');
 ```
-根据配置文件在本地浏览器输入：http://localhost:9000/guide/index.html
+
+根据配置文件在本地浏览器输入：[http://localhost:9000/guide/index.html](http://localhost:9000/guide/index.html)
 ### 发送请求
-ECUI的数据请求可以在路由对象的model中添加，一个简单的请求用户信息的示例：
+ECUI的数据请求可以在路由对象的**model**中添加，一个简单的请求用户信息的示例：
+
 ```js
 model: [
     'userInfo@GET base/user-info/${id}'
 ],
 ```
-还可以通过ecui.esr.request(）的方式进行请求的发送,同样的用户信息的请求实现:
+还可以通过`ecui.esr.request(）`的方式进行请求的发送,同样的用户信息的请求实现:
+
 ```js
 ecui.esr.request('userInfo@GET base/user-info/${id}', function () {
     if (context.data instanceof Object) {
@@ -276,29 +291,37 @@ ecui.esr.request('userInfo@GET base/user-info/${id}', function () {
     }
 });
 ```
-上面的代码中的匿名函数是请求成功后执行的函数。其中'userInfo@GET base/user-info/${id}'是一种语法，具体句法形式为：变量@方式 api路径?参数名=参数值，其中方式包括GET、POST、JOIN、FORM。
+
+上面的代码中的匿名函数是请求成功后执行的函数。其中`userInfo@GET base/user-info/${id}`是一种语法，具体句法形式为：`变量@方式 api路径?参数名=参数值`，其中方式包括`GET`、`POST`、`JOIN`、`FORM`。
 ### 事件管理
-ECUI的事件完全支持DOM事件，ECUI事件处理函数在函数addRoute中添加，事件处理函数放在onafterrender()函数中，一个按钮的点击事件的处理函数示例代码如下：   
+ECUI的事件完全支持DOM事件，ECUI事件处理函数在函数`addRoute`中添加，事件处理函数放在`onafterrender()`函数中，一个按钮的点击事件的处理函数示例代码如下：   
 按钮
+
 ```html
 <input ui="type:button;id:customerAddButton;" value="确认" type="button"/>
 ```
+
 按钮点击处理：
+
 ```js
 ecui.get('customerAddButton').onclick = function () {
     // Do what you want to do.
 };
 ```
-上面的按钮也是一个ECUI的控件，通过ecui.get()方法可以获得该控件的对象，在ECUI中事件处理函数命名都是'on+事件'的格式。
+
+上面的按钮也是一个ECUI的控件，通过`ecui.get()`方法可以获得该控件的对象，在ECUI中事件处理函数命名都是`on+事件`的格式。
 
 ## 如何部署
 ### 打包代码
 ECUI支持在开发完成好打包代码发布。首先进入到框架和项目目录的父目录，执行打包代码命令：   
-./lib-fe/build.sh 项目目录名称   
+>./lib-fe/build.sh 项目目录名称  
+
 打包时候需要安装lessc：  
-npm i -g less   
-安装Java，安装过程可百度或者google，资料很多。
-特殊情况下会遇到在开发环境没有问题，但是在发布的环境中有问题，在发布的环境中请求是异步的，对发布环境进行调试可以修改build.sh文件：   
+>npm i -g less  
+
+安装Java，安装过程可`百度`或者`Google`，资料很多。
+特殊情况下会遇到在开发环境没有问题，但是在发布的环境中有问题，在发布的环境中请求是异步的，对发布环境进行调试可以修改**build.sh**文件：   
+
 ```js
 //less-plugin-clean-css没有安装或者安装有问题的话
 css_proc='lessc - --plugin=less-plugin-clean-css | python ${path}less-funcs.py "$2"'
@@ -316,7 +339,7 @@ cd ..
 
 rm -rf $output
 ```
-打包之后，修改nginx服务器配置文件，使本地启动打包后的项目，然后可以按照正常方式对项目进行调试。
+打包之后，修改`nginx`服务器配置文件，使本地启动打包后的项目，然后可以按照正常方式对项目进行调试。
 
 ### 配置服务器
-直接把打包后的代码上传到服务器，就像配置vue和react等开发的前端项目一样，安装配置好Nginx服务器即可。
+直接把打包后的代码上传到服务器，就像配置`vue`和`react`等开发的前端项目一样，安装配置好`Nginx`服务器即可。
