@@ -15,9 +15,9 @@ ECUI是我们易鑫集团一个总监10多年前在百度写的一个面向web�
 [框架原理](doc/框架原理.md)   
 
 ## 如何贡献代码和更新文档
-希望经常使用的朋友们一起贡献代码和完善文档哈：
-文档内容放在了GitHub上：https://github.com/yxUED/ecui-guide，
-只有组内人员才可以对文档进行修改，由已经在组内的人员邀请的方式加入。  
+希望经常使用的朋友们一起贡献代码和完善文档哈：  
+文档内容放在了GitHub上：https://github.com/yxUED/ecui-guide，   
+只有组内人员才可以对文档进行修改，由已经在组内的人员邀请的方式加入。     
 文档采用[MarkDown](http://www.markdown.cn/)编写，编写人员可以clone下文档项目进行编辑，或者直接通过GitHub中每个页面的编辑按钮对文档进行编辑，编辑完毕保存修改。
 
 ## 常见问题
@@ -53,7 +53,7 @@ guide(项目目录)
                 |_ _ _ _  index.css
 
 ```
-项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。  
+项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。     
 在项目中引用ECUI框架的方式采用在index.html文件中加入以下代码：
 ```html
 <link rel="stylesheet/less" type="text/css" href="ecui.css" />
@@ -66,8 +66,8 @@ guide(项目目录)
 ```
 上面的引入文件框架必须的是ecui.css、options.js、ecui.js，其他文件是为了该教材的示例的特定文件。
 ### 配置本地服务器
-教程提供通过Nginx和在页面上通过script标签引用需要的文件来实现ECUI框架的配置。  
-1、安装Nginx服务器，Nginx官网没有提供Mac安装步骤，但是百度或google有很多的相关安装教程，这里不再赘述。  
+教程提供通过Nginx和在页面上通过script标签引用需要的文件来实现ECUI框架的配置。     
+1、安装Nginx服务器，Nginx官网没有提供Mac安装步骤，但是百度或google有很多的相关安装教程，这里不再赘述。     
 2、配置Nginx配置文件。配置Nginx服务器,示例如下，根据实际环境（Mac brew安装默认路径:/usr/local/etc/nginx/nginx.conf）
 ```
 #控制工作进程数
