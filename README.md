@@ -57,7 +57,7 @@ guide(项目目录)
                 |_ _ _ _  index.css
 
 ```
-项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。     
+项目可以与ECUI框架源码放在同一个目录下。命名方式建议上面helloworld所在的位置相同。可以使用本github中的[ecui.sh](ecui.sh) 文档创建目录结构和路由，具体使用方式进入到ecui.sh所在目录，执行./ecui.sh -h查看帮助文档。         
 在项目中引用ECUI框架的方式采用在index.html文件中加入以下代码：
 
 ```html
@@ -115,8 +115,6 @@ http {
       server 192.168.155.56:80;
     }
 
-    #本地开发时用于请求项目的静态文件，需要在hosts中配置 127.0.0.1 为localhost(Mac一般默认配置)
-    #否则通过127.0.0.1加 文件路径进行访问
     server {
         listen       9000;
         server_name  localhost;
