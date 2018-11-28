@@ -1,20 +1,19 @@
 # ECUI 教程及文档
 
 ## 前言
-&emsp;&emsp; &emsp;&emsp; ecui 是10年前百度前端架构师欧阳开发的一个前端框架，支持前后端分离及SPA单页应用，一开始仅支持PC端的开发，目前已经支持移动端的开发；该前端框架特别适合于交互繁多复杂的 2b场景，对事件进行统一的管理，不同于其他主流react和vue不支持IE低版本浏览器，ecui兼容IE7意思浏览器，且不需要npm包引入大量不稳定的插件，多数场景功能都有内置的控件实现。
+&emsp;&emsp;ecui是一个用于前端开发的面向事件的框架，支持前后端分离及SPA单页应用，支持PC和移动端的开发；该前端框架特别适合于交互繁多复杂的2b场景，对事件进行统一的管理，ecui兼容IE7以上浏览器，且不需要npm包引入大量不稳定的插件，多数场景功能都有内置的控件实现。
 
-&emsp;&emsp; &emsp;&emsp; 总之，没有对比就没有伤害，使用ecui带来的高效和稳定性，谁用谁知道！
-##源码地址:
+## 源码地址:
 这是框架核心开发者开源出来源码的地址：[https://github.com/allskystar/ECUI](https://github.com/allskystar/ECUI);
 
 ## 使用教程
 初次尝试使用的，请先看后面的快速开始，深入了解，请阅读如下框架各模块的使用链接：   
-[样式](doc/样式.md)   
+[样式](doc/样式.md)  
+[路由](doc/路由.md)  
+[数据请求](doc/数据请求.md)   
+[控件](doc/控件.md)   
 [表单](doc/表单.md)   
 [事件处理](doc/事件处理.md)  
-[数据请求](doc/数据请求.md)    
-[路由](doc/路由.md)   
-[控件](doc/控件.md)   
 [框架原理](doc/框架原理.md)   
 
 ## 如何贡献代码和更新文档
@@ -315,33 +314,19 @@ ecui.get('customerAddButton').onclick = function () {
 
 ## 如何部署
 ### 打包代码
-ECUI支持在开发完成好打包代码发布。首先进入到框架和项目目录的父目录，执行打包代码命令：   
->./lib-fe/build.sh 项目目录名称  
 
-打包时候需要安装lessc：  
->npm i -g less  
+打包时候需要安装lessc,插件 和ugligy：  
+>sudo npm i -g less@2.7.3   
+>sudo npm i -g less-plugin-clean-css   
+>sudo npm i -g uglify-es@3.3.9  
 
 安装Java，安装过程可`百度`或者`Google`，资料很多。
-特殊情况下会遇到在开发环境没有问题，但是在发布的环境中有问题，在发布的环境中请求是异步的，对发布环境进行调试可以修改**build.sh**文件：   
 
-```js
-//less-plugin-clean-css没有安装或者安装有问题的话
-css_proc='lessc - --plugin=less-plugin-clean-css | python ${path}less-funcs.py "$2"'
-//去掉--plugin=less-plugin-clean-css
-css_proc='lessc - | python ${path}less-funcs.py "$2"'
+ECUI支持在开发完成好打包代码发布。首先进入到框架和项目目录的父目录，执行打包代码命令：   
+>./lib-fe/build.sh 项目目录名称  \[参数\]
+比如淘车拍：
+>./lib-fe/build.sh taochepai-h5-ecui  taochepai
 
-//不再压缩框架代码，把打包代码：
-compress_proc='java -jar ${path}webpacker.jar --mode 1 --charset utf-8'
-//去掉，换cat
-compress_proc='cat'
-//保留打包后的原目录，不进行压缩，去掉下面代码：  
-cd $output
-tar -zcvf "../$1.tar.gz" *
-cd ..
-
-rm -rf $output
-```
-打包之后，修改`nginx`服务器配置文件，使本地启动打包后的项目，然后可以按照正常方式对项目进行调试。
 
 ### 配置服务器
 直接把打包后的代码上传到服务器，就像配置`vue`和`react`等开发的前端项目一样，安装配置好`Nginx`服务器即可。
